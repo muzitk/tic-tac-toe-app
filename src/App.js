@@ -92,7 +92,9 @@ class App extends Component {
             {this.renderBoxes()}
         </div>
 
+        <div className = "buttton">
         <button disabled={!this.state.winner} onClick={() => this.reset()}>Reset</button>
+        </div>
      </div>
     );
   }

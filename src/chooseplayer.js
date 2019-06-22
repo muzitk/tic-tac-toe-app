@@ -11,18 +11,19 @@ class Player extends Component{
 
     return (
     <form onSubmit = {(e) => this.handleForm(e)}>
-      <label>
-        Player X
-         <input type = "radio" name = "player" value = "X"/>
-     </label>
+      <div className = "form">
+        <label>
+           Player X
+            <input type = "radio" name = "player" value = "X"/>
+        </label>
 
-     <label>
-      Player O
-      <input type = "radio" name = "player" value = "O"/>
-  </label>
-
-  <input type = "submit" value = "Start" />
-</form>)
+        <label>
+          Player O
+          <input type = "radio" name = "player" value = "O"/>
+      </label>
+      <input type = "submit" value = "Start" />
+     </div>
+   </form>)
   }
 }
 
