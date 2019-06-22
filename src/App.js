@@ -60,39 +60,40 @@ class App extends Component {
     this.setState({ player })
 
   }
-  renderBoxes () {
-    return this.state.board.map(
-    (box, index) =>
-  <div className = "box"
-    key={index}
-    onClick= {() => this.handleClick(index)}>
-     {box}
-   </div>
+    renderBoxes () {
+      return this.state.board.map(
+      (box, index) =>
+       <div className = "box"
+        key={index}
+        onClick= {() => this.handleClick(index)}>
+       {box}
+      </div>
 
-    )
+     )
    }
-  reset() {
-    this.setState({
-      player: null,
-      winner: null,
-      board: Array(9).fill(null)
-    });
-   }
+    reset() {
+      this.setState({
+        player: null,
+        winner: null,
+        board: Array(9).fill(null)
+      });
+    }
   render() {
     return (
     <div className="container">
-       <h1> Tic Tac Toe </h1>
-       <Status
-       player = {this.state.player}
-       setPlayer = {(e) => {this.setPlayer(e)}}
-       winner={this.state.winner} />
+        <h1> Tic Tac Toe </h1>
+        <Status
+          player = {this.state.player}
+          setPlayer = {(e) => {this.setPlayer(e)}}
+          winner={this.state.winner} 
+        />
 
-      <div className = "board">
-          {this.renderBoxes()}
+        <div className = "board">
+            {this.renderBoxes()}
+        </div>
 
-   </div>
-    <button disabled={!this.state.winner} onClick={() => this.reset()}>Reset</button>
-  </div>
+        <button disabled={!this.state.winner} onClick={() => this.reset()}>Reset</button>
+     </div>
     );
   }
 }
